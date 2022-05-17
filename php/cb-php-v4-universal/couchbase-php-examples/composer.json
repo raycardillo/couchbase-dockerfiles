@@ -1,0 +1,5 @@
+{
+    "require": {
+        "couchbase/couchbase": "^4.0"
+    }
+}
