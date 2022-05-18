@@ -11,10 +11,24 @@ then
   echo "Using default container name: $contName"
 fi
 
-echo "Making sure the Docker Desktop app is running"
-open -j /Applications/Docker.app
+if [ -f /etc/os-release ]
+then
+    . /etc/os-release
+fi
 
-echo "Calling docker start/exec with container: $contName"
-docker start "$contName" \
+DOCKER=docker
+
+if [ "$ID" = "fedora" ]
+then
+    echo "Fedora Linux detected. Use podman instead of docker"
+    DOCKER=podman
+else
+    echo "Making sure the Docker Desktop app is running"
+    open -j /Applications/Docker.app
+fi
+
+
+echo "Calling $DOCKER start/exec with container: $contName"
+$DOCKER start "$contName" \
 && \
-docker exec -it "$contName" /bin/bash
+$DOCKER exec -it "$contName" /bin/bash
