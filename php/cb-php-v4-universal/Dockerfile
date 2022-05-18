@@ -19,7 +19,7 @@ RUN apt-get update -y \
 WORKDIR /home
 
 # building from source to support M1 macs as well
-RUN git clone --recurse-submodules -b 4.0.0 https://github.com/couchbaselabs/couchbase-php-client.git
+RUN git clone --recurse-submodules -b 4.0.0 https://github.com/couchbase/couchbase-php-client.git
 
 WORKDIR /home/couchbase-php-client
 
