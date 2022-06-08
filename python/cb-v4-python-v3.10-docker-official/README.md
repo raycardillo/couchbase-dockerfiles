@@ -9,9 +9,9 @@ It can otherwise be difficult to run on certain platforms (e.g., when using `Doc
 - [Couchbase Python](https://github.com/couchbase/couchbase-python-client)
 
 ## Commands
-- [docker-build.sh](docker-build.sh) - Performs the initial build and creates the docker image.
-- [docker-run.sh](docker-run.sh) - After the initial build, this creates a container from the image, starts a container, and opens a `bash` command line shell.
-- [docker-bash.sh](docker-bash.sh) - After the initial run, use this on subsequent runs to start the container and open a `bash` command line shell.
+- [docker-build.sh](../../scripts/docker-build.sh) - Performs the initial build and creates the docker image.
+- [docker-run.sh](../../scripts/docker-run.sh) - After the initial build, this creates a container from the image, starts a container, and opens a `bash` command line shell.
+- [docker-shell.sh](../../scripts/docker-shell.sh) - After the initial run, use this on subsequent runs to start the container and open a `bash` command line shell.
 
 ## Examples
 - [couchbase-python-examples](couchbase-python-examples) - Contains examples that can be executed with the `python` command and produce simple command line output for quick testing.
