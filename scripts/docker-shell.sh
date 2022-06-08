@@ -11,8 +11,7 @@ then
   echo "Using default container name: $contName"
 fi
 
-echo "Making sure the Docker Desktop app is running"
-open -j /Applications/Docker.app
+./docker-open.sh
 
 echo "Calling docker start/exec with container: $contName"
 docker start "$contName" \

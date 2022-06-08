@@ -4,6 +4,7 @@ LABEL org.opencontainers.image.authors="Ray Cardillo"
 
 ENV container docker
 ENV PATH=".:${PATH}"
+ENV TERM="xterm-256color"
 
 RUN apt-get update -y \
     && \
