@@ -18,24 +18,29 @@ RUN apt-get update -y \
     sed vim \
     openssl libssl-dev
 
+
+# Add the couchbase repo source in this layer
+RUN wget https://packages.couchbase.com/clients/c/repos/deb/couchbase.key \
+    && \
+    apt-key add couchbase.key \
+    && \
+    echo "deb https://packages.couchbase.com/clients/c/repos/deb/debian11 bullseye bullseye/main" | tee /etc/apt/sources.list.d/couchbase.list
+
+# Now that the Couchbase repo is added we can update and install Couchbase deps
+RUN apt-get update -y \
+    && \
+    apt-get install -y \
+    libcouchbase-dev \
+    libcouchbase3 \
+    libcouchbase3-libev \
+    libcouchbase3-libevent \
+    libcouchbase3-tools
+
 WORKDIR /home
-
-# building from source to support M1 macs as well
-RUN git clone --recurse-submodules -b 4.0.0 https://github.com/couchbase/couchbase-php-client.git
-
-WORKDIR /home/couchbase-php-client
-
-# For testing PRs
-#RUN git fetch origin pull/6/head \
-#    && \
-#    git checkout -b pullrequest FETCH_HEAD
 
 ENV CB_PHP_PREFIX=/usr/local
 
-RUN ./bin/build
-RUN ./bin/package
-
-RUN pecl install couchbase-4.0.0.tgz \
+RUN pecl install https://packages.couchbase.com/clients/php/couchbase-3.2.2.tgz \
     && \
     docker-php-ext-enable couchbase
 

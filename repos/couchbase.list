@@ -1,0 +1,6 @@
+deb https://packages.couchbase.com/clients/c/repos/deb/ubuntu1604 xenial xenial/main
+deb https://packages.couchbase.com/clients/c/repos/deb/ubuntu1804 bionic bionic/main
+deb https://packages.couchbase.com/clients/c/repos/deb/ubuntu2004 focal focal/main
+deb https://packages.couchbase.com/clients/c/repos/deb/debian9 stretch stretch/main
+deb https://packages.couchbase.com/clients/c/repos/deb/debian10 buster buster/main
+deb https://packages.couchbase.com/clients/c/repos/deb/debian11 bullseye bullseye/main
