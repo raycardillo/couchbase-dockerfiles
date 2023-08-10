@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM registry.access.redhat.com/rhel7:7.9-702
 
 LABEL org.opencontainers.image.authors="Ray Cardillo"
 

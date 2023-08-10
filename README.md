@@ -5,7 +5,7 @@ I try to document the scripts reasonably well and include `README` files to help
 
 ## Docker Scripts
 
-The `Docker` scripts are tested with the Docker Desktop runnin on an M1 MacBook Pro. In some cases, depending on platform availability of underlying images, you might have to run with `--platform linux/amd64` or similar instead.
+The `Docker` scripts are tested with Docker Desktop on an M1 MacBook Pro. In some cases, depending on platform availability of underlying images, you might have to run with `--platform linux/amd64` or similar instead. When running on macOS with an M1, you should enable the Rosetta feature in Docker Desktop.
 
 
 ## podman Scripts

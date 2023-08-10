@@ -1,0 +1,1 @@
+../../scripts/docker-build-amd64.sh

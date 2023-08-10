@@ -1,8 +1,6 @@
 #!/bin/bash
 # author: Ray Cardillo circa 2022
 
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
 contName="$1"
 
 if [ -z "$contName" ]
@@ -13,7 +11,7 @@ then
   echo "Using default container name: $contName"
 fi
 
-$SCRIPT_DIR/docker-open.sh
+./docker-open.sh
 
 echo "Calling docker start/exec with container: $contName"
 docker start "$contName" \

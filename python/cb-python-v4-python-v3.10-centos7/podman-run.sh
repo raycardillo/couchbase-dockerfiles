@@ -1,12 +1,8 @@
 #!/bin/bash
 # author: Ray Cardillo circa 2022
 
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
 imageName="$1"
 contName="$2"
-ports="$3"
-mounts="$4"
 
 if [ -z "$imageName" ]
 then
@@ -26,7 +22,7 @@ then
   echo "Using default container name: $contName"
 fi
 
-$SCRIPT_DIR/docker-open.sh
+./podman-start.sh
 
 echo "Calling docker run with image: $imageName"
-docker run $ports $mounts --name "$contName" -it "$imageName"
+podman run --name "$contName" -it "$imageName"

@@ -1,10 +1,6 @@
 #!/bin/bash
 # author: Ray Cardillo circa 2022
 
-# NOTE: Enable the Rosetta for x86/amd64 emulate feature when using this on an M1 mac.
-
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
 imageName="$1"
 
 if [ -z "$imageName" ]
@@ -15,8 +11,7 @@ then
   echo "Using default image name: $imageName"
 fi
 
-$SCRIPT_DIR/docker-open.sh
+./podman-start.sh
 
 # using --no-cache to make sure a clean build is done
-docker build --platform linux/amd64 --no-cache -t "$imageName" ./context
-
+podman build --no-cache -t "$imageName" ./context

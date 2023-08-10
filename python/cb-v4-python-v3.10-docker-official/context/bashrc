@@ -1,0 +1,16 @@
+# enable color command prompt for interactive shell
+export TERM="xterm-color"
+export PROMPT_DIRTRIM=2 
+export PS1="\e[0;37m[docker] \e[0;33m\w \$ \e[m"
+
+# enable color commands for ls and grep
+alias ls='ls -GFh --color'
+alias grep='grep --color'
+
+# protect from some common mistakes
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# add /home to PYTHONPATH for config files
+export PYTHONPATH="/home"

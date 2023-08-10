@@ -1,6 +1,8 @@
 #!/bin/bash
 # author: Ray Cardillo circa 2022
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
 imageName="$1"
 
 if [ -z "$imageName" ]
@@ -11,7 +13,7 @@ then
   echo "Using default image name: $imageName"
 fi
 
-./podman-start.sh
+$SCRIPT_DIR/podman-start.sh
 
 # using --no-cache to make sure a clean build is done
 podman build --no-cache -t "$imageName" ./context
