@@ -1,7 +1,7 @@
 #!/bin/bash
 # author: Ray Cardillo circa 2022
 
-# NOTE: Enable the Rosetta for x86/amd64 emulate feature when using this on an M1 mac.
+# NOTE: Enable the "Use Rosetta for x86/amd64 emulation on Apple Silicon" feature when running on an M1 mac.
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
